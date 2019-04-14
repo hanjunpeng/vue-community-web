@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>vue-community-web</title>
+    <script type="text/javascript">
+      !function (e) { var t = {}; t.resizeEvt = "orientationchange" in window ? "orientationchange" : "resize", t.Html = e.getElementsByTagName("html")[0], t.widthProportion = function () { var n = Number((e.body && e.body.clientWidth || t.Html.offsetWidth) / 10); return n > 76.8 ? 76.8 : n < 32 ? 32 : n }, t.changePage = function () { t.Html.setAttribute("style", "font-size:" + t.widthProportion() + "px"), t.correctPx() }, t.correctPx = function () { var e = document.documentElement, n = e.clientWidth; if (n && !(n > 768)) { var i = document.createElement("div"); i.style.width = "10rem", i.style.height = "0", t.Html.appendChild(i); var o = n, d = i.clientWidth / o; 1 !== d && (e.style.fontSize = n / 10 / d + "px"), t.Html.removeChild(i) } }, t.changePage(), document.addEventListener && (window.addEventListener(t.resizeEvt, t.changePage, !1), document.addEventListener("DOMContentLoaded", t.changePage, !1)) }(document);
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but vue-community-web doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
