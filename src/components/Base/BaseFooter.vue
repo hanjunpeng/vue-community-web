@@ -34,13 +34,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.nav-bar-wrap{
+.nav-bar-wrap {
   width: 100%;
   position: fixed;
   bottom: 0;
   justify-content: space-between;
   display: flex;
-  li{
+  li {
     width: 25%;
     text-align: center;
     height: 100%;
@@ -50,4 +50,3 @@ export default {
   }
 }
 </style>
-

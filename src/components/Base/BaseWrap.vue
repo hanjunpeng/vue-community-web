@@ -19,10 +19,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/assets/css/mixin.scss';
-.outer-menu{
+@import "@/assets/css/mixin.scss";
+.outer-menu {
   border-top: 1px solid #f5f5f5;
   height: pxToRem(100px);
 }
 </style>
-
