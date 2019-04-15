@@ -11,7 +11,7 @@ const database = require('./database.js');
 const databaseUrl = `mongodb://${database.hostname}/${database.database}`
 mongoose.connect(databaseUrl)
 mongoose.connection.on('connected', () => {
-  console.log('Mongodb connected success')
+  console.log(`${databaseUrl} Mongodb connected success`)
 })
 mongoose.connection.on('error', () => {
   console.log('Mongodb connected fail')
@@ -20,4 +20,19 @@ mongoose.connection.on('disconnected', () => {
   console.log('Mongodb connected disconnected')
 })
 
+// 中间件 解析请求体
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
 
+const router = express.Router();
+router.get('/demo', function (req, res) {
+  res.send({
+    status:'0'
+  })
+})
+
+app.use(router)
+
+app.listen(3000, () => {
+  console.log('server is running on http://localhost:3000')
+})
