@@ -3,3 +3,9 @@
 @function pxToRem($px) {
   @return $px / 75px * 1rem;
 }
+@mixin backgroundImage($x: center,$y: center,$sx:100%,$sy:auto){
+    background-repeat: no-repeat;
+    background-size: $sx $sy;
+    background-position-x: $x;
+    background-position-y: $y;
+}

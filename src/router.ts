@@ -9,17 +9,40 @@ export default new Router({
   routes: [
     {
       path: "/",
-      redirect: "home"
+      redirect: "home",
+      meta: {
+        title: "商城首页"
+      }
     },
     {
       path: "/home",
-      name: "home",
-      component: () => import("./components/Base/BaseWrap.vue")
-    },
-    {
-      path: "/about",
-      name: "about",
-      component: () => import("./views/About.vue")
+      meta: {
+        title: "商城首页"
+      },
+      component: () => import("./components/Base/BaseWrap.vue"),
+      children: [
+        {
+          path: "/classify",
+          meta: {
+            title: "全部分类"
+          },
+          component: () => import("./views/classify/index.vue")
+        },
+        {
+          path: "/cart",
+          meta: {
+            title: "购物车"
+          },
+          component: () => import("./views/cart/index.vue")
+        },
+        {
+          path: "/my",
+          meta: {
+            title: "我的"
+          },
+          component: () => import("./views/my/index.vue")
+        }
+      ]
     }
   ]
 });
