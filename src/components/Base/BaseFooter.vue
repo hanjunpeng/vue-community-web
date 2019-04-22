@@ -1,11 +1,12 @@
 <template>
   <ul class="nav-bar-wrap">
     <li
+      :attr-id="$store.state.menu.active"
       v-for="(item, index) in Dict.BASEFOOTER"
       :key="index"
       :class="[
         item.value,
-        $store.state.menu.active === `index/${item.value}` ? 'is-active' : ''
+        $store.state.menu.active === `/${item.value}` ? 'is-active' : ''
       ]"
       @click="handleClick(item, index)"
     >
@@ -22,7 +23,7 @@ export default {
   },
   methods: {
     handleClick(item, index) {
-      this.$store.commit("setMenuActive", `index/${item.value}`);
+      this.$store.commit("setMenuActive", `${item.value}`);
       this.$router.push(item.value);
     }
   }
