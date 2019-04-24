@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const mongoose = require('mongoose');
 const database = require('./database.js');
+const router = require('./router')
 
 //链接数据库
 const databaseUrl = `mongodb://${database.hostname}/${database.database}`
@@ -23,15 +24,15 @@ mongoose.connection.on('disconnected', () => {
 // 中间件 解析请求体
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
-
-const router = express.Router();
-router.get('/demo', function (req, res) {
-  res.send({
-    status:'0'
-  })
-})
-
 app.use(router)
+// const router = express.Router();
+// router.get('/demo', function (req, res) {
+//   res.send({
+//     status:'0'
+//   })
+// })
+
+// app.use(router)
 
 app.listen(3000, () => {
   console.log('server is running on http://localhost:3000')

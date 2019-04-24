@@ -15,7 +15,7 @@ export default {
     }
   },
   created() {
-    console.log(this, 8);
+    // console.log(this, 8);
   }
 };
 </script>
