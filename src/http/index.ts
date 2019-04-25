@@ -11,7 +11,11 @@ axios.create({
 // axios 请求拦截器
 axios.interceptors.request.use(
   config => {
+    console.log(config)
     config.headers["Content-Type"] = "application/x-www-form-urlencoded";
+    if (config.method === 'post') {
+      
+    }
     return config;
   },
   error => {
