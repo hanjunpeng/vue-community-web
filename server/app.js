@@ -25,14 +25,6 @@ mongoose.connection.on('disconnected', () => {
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(router)
-// const router = express.Router();
-// router.get('/demo', function (req, res) {
-//   res.send({
-//     status:'0'
-//   })
-// })
-
-// app.use(router)
 
 app.listen(3000, () => {
   console.log('server is running on http://localhost:3000')

@@ -10,11 +10,14 @@
   "dependencies": {
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
+    "mint-ui": "^2.2.13",
+    "vconsole": "^3.3.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.0.3",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "vux": "^2.9.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.6.0",
@@ -27,8 +30,11 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
+    "qs": "^6.7.0",
     "sass-loader": "^7.1.0",
     "typescript": "^3.4.3",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "vux": "^2.9.4",
+    "vux-loader": "^1.2.9"
   }
 }

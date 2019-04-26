@@ -8,8 +8,14 @@ module.exports = function (req, res) {
     u_name: u_name || '',
     u_password: u_password || ''
   })
-  console.log(u_name, u_password)
-  res.json({
-    code: 1
+  User.find({ u_name: u_name }, (err, doc) => {
+    console.log(doc)
+    if (doc.length === 0) {
+      res.send({ code: 1, msg: '该用户不存在' })
+    } else if (doc[0].u_password === u_password) {
+      res.send({ code: 0, msg: '登录成功'})
+    } else if (doc[0].u_password !== u_password) {
+      res.send({code: 1, msg: '密码不正确，请重新输入'})
+    }
   })
 }
