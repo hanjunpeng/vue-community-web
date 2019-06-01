@@ -3,8 +3,8 @@
  */
 import axios from "axios";
 import Vue from "vue";
-import qs from "qs";
-import { Toast } from 'mint-ui';
+// import qs from "qs";
+// import { Toast } from "mint-ui";
 let http = axios.create({
   baseURL: "/api"
 });
@@ -15,9 +15,9 @@ http.interceptors.request.use(
     let _parames = {};
     config.headers["Content-Type"] = "application/x-www-form-urlencoded";
     if (config.method === "post") {
-      let data = qs.parse(config.data);
-      let parames = Object.assign(_parames, data);
-      config.data = qs.stringify(parames);
+      // let data = qs.parse(config.data);
+      // let parames = Object.assign(_parames, data);
+      // config.data = qs.stringify(parames);
     }
     return config;
   },
@@ -32,11 +32,11 @@ http.interceptors.response.use(
     if (response.data.code === 0) {
       return response.data;
     } else {
-      Toast({
-        message: `${response.data.msg}`,
-        position: 'bottom',
-        duration: 3000
-      })
+      // Toast({
+      //   message: `${response.data.msg}`,
+      //   position: "bottom",
+      //   duration: 3000
+      // });
     }
   },
   error => {
